@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  deleteProfileController,
   getUserController,
   resetPasswordController,
   updatePasswordController,
@@ -19,7 +20,10 @@ router.put("/updateUser", authMiddleware, updateUserController);
 // Reset Password
 router.post("/resetPassword", authMiddleware, resetPasswordController);
 
-// password update
+// Password Update
 router.post("/updatePassword", authMiddleware, updatePasswordController);
+
+// Delete User
+router.delete("/deleteUser/:id", authMiddleware, deleteProfileController);
 
 export default router;

@@ -154,9 +154,28 @@ const updatePasswordController = async (req, res) => {
   }
 };
 
+// Delete Profile Controller
+const deleteProfileController = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    return res.status(200).send({
+      success: true,
+      message: "your account has been deleted",
+    });
+  } catch (error) {
+    console.log("Delete Profile Error:", error.message);
+    res.status(500).send({
+      success: false,
+      message: "Error in Delete Profile Api",
+      error,
+    });
+  }
+};
+
 export {
   getUserController,
   updateUserController,
   resetPasswordController,
   updatePasswordController,
+  deleteProfileController,
 };
