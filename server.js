@@ -7,6 +7,7 @@ import testRoute from "./routes/test.route.js";
 import connectDb from "./config/db.js";
 import authRoute from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
+import resturantRouter from "./routes/resturantRoute.js";
 
 // dotenv configuration
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(morgan("dev"));
 app.use("/api/v1/test", testRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/resturant", resturantRouter);
 
 app.get("/", (req, res) => {
   return res.status(200).send("<h1> Welcome to server </h1>");
