@@ -9,6 +9,7 @@ import authRoute from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
 import resturantRouter from "./routes/resturantRoute.js";
 import categoryRouter from "./routes/categoryRoute.js";
+import foodRouter from "./routes/foodRoute.js";
 
 // dotenv configuration
 dotenv.config();
@@ -32,6 +33,7 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/resturant", resturantRouter);
 app.use("/api/v1/category", categoryRouter);
+app.use("/api/v1/food", foodRouter);
 
 app.get("/", (req, res) => {
   return res.status(200).send("<h1> Welcome to server </h1>");
